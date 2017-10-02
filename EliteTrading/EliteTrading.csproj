@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{178F7A75-8EDC-4FD8-87A4-A03C648C61D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EliteTrading</RootNamespace>
+    <AssemblyName>EliteTrading</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\JSON\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commodity\CommodityList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Commodity\CommodityList.Designer.cs">
+      <DependentUpon>CommodityList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commodity\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commodity\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Commodity.cs" />
+    <Compile Include="Data\Connection.cs" />
+    <Compile Include="Data\Distance.cs" />
+    <Compile Include="Data\Route.cs" />
+    <Compile Include="Data\Rules.cs" />
+    <Compile Include="Data\Station.cs" />
+    <Compile Include="Data\System.cs" />
+    <Compile Include="Data\Trade.cs" />
+    <Compile Include="Data\Vector3.cs" />
+    <Compile Include="GlobalData.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pathfinder\BreadCrumb.cs" />
+    <Compile Include="Pathfinder\MinHeap.cs" />
+    <Compile Include="Pathfinder\PathFinder.cs" />
+    <Compile Include="Pathfinder\Point3D.cs" />
+    <Compile Include="Pathfinder\World.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteSel.Designer.cs">
+      <DependentUpon>RouteSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteViewer.Designer.cs">
+      <DependentUpon>RouteViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Style.cs" />
+    <Compile Include="Systems\Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Systems\Edit.Designer.cs">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Systems\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\Map.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Systems\Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\SystemMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Systems\SystemMap.Designer.cs">
+      <DependentUpon>SystemMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Systems\Results.Designer.cs">
+      <DependentUpon>Results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SortableBindingList.cs" />
+    <Compile Include="Systems\SystemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Systems\SystemList.Designer.cs">
+      <DependentUpon>SystemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskStatus.cs" />
+    <Compile Include="TradeResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeResult.Designer.cs">
+      <DependentUpon>TradeResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserData.cs" />
+    <Compile Include="AppSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserSettings.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Commodity\CommodityList.resx">
+      <DependentUpon>CommodityList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commodity\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RouteSel.resx">
+      <DependentUpon>RouteSel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteViewer.resx">
+      <DependentUpon>RouteViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\Edit.resx">
+      <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\SystemMap.resx">
+      <DependentUpon>SystemMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\Results.resx">
+      <DependentUpon>Results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\SystemList.resx">
+      <DependentUpon>SystemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TradeResult.resx">
+      <DependentUpon>TradeResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Data\commodities.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\stations_lite.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\systems.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\EliteTrading.Data.Commodity.datasource" />
+    <None Include="Properties\DataSources\EliteTrading.Data.Route+RouteStep.datasource" />
+    <None Include="Properties\DataSources\EliteTrading.Data.Station.datasource" />
+    <None Include="Properties\DataSources\EliteTrading.Data.System.datasource" />
+    <None Include="Properties\DataSources\EliteTrading.Data.Trade+TradeStep.datasource" />
+    <None Include="Properties\DataSources\EliteTrading.Data.Trade.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="AppSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UserSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\JSON\license.txt" />
+    <Content Include="Lib\JSON\Newtonsoft.Json.dll" />
+    <Content Include="Lib\JSON\Newtonsoft.Json.pdb" />
+    <Content Include="Lib\JSON\Newtonsoft.Json.xml" />
+    <Content Include="Lib\JSON\readme.txt" />
+    <None Include="Resources\Star.png.png" />
+    <None Include="Resources\Star.png" />
+    <None Include="Resources\Splash.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
