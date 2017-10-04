@@ -23,8 +23,10 @@ namespace EliteTrading.Data
         [Newtonsoft.Json.JsonProperty(PropertyName = "distance_to_star")]
         public int Distance_to_Star { get; set; }
 
-        [Newtonsoft.Json.JsonProperty(PropertyName = "faction")]
-        public string Faction { get; set; }
+        [Newtonsoft.Json.JsonProperty(PropertyName = "controlling_minor_faction_id")]
+        public int FactionID { get; set; }
+        
+        public Faction Faction { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "government")]
         public string Government { get; set; }

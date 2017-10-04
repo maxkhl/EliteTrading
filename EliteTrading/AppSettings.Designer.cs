@@ -154,5 +154,17 @@ namespace EliteTrading {
                 this["StationsDbUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://eddb.io/archive/v5/factions.json")]
+        public string FactionsDbUrl {
+            get {
+                return ((string)(this["FactionsDbUrl"]));
+            }
+            set {
+                this["FactionsDbUrl"] = value;
+            }
+        }
     }
 }

@@ -174,7 +174,7 @@ namespace EliteTrading
         private void whereToBuyShipsGearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Targets = (from system in GlobalData.Systems
-                           where system.power_control_faction == "Li Yong-Rui" &&
+                           where system.power == "Li Yong-Rui" &&
                                  system.needs_permit == false &&
                                  system.primary_economy == "High Tech" &&
                                  (from station in system.Stations

@@ -34,6 +34,8 @@
             this.stationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lNotes = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.lDistCurrent = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lSOL = new System.Windows.Forms.Label();
@@ -64,24 +66,14 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxlandingpadsizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distancetoStarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Faction = new System.Windows.Forms.DataGridViewLinkColumn();
             this.governmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allegianceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasBlackmarketDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasCommoditiesDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasRefuelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasRepairDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasRearmDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasOutfittingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasShipyardDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.updatedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lNotes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -103,20 +95,12 @@
             this.nameDataGridViewTextBoxColumn,
             this.systemIDDataGridViewTextBoxColumn,
             this.maxlandingpadsizeDataGridViewTextBoxColumn,
-            this.distancetoStarDataGridViewTextBoxColumn,
             this.factionDataGridViewTextBoxColumn,
+            this.Faction,
             this.governmentDataGridViewTextBoxColumn,
             this.allegianceDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn,
-            this.hasBlackmarketDataGridViewCheckBoxColumn,
-            this.hasCommoditiesDataGridViewCheckBoxColumn,
-            this.hasRefuelDataGridViewCheckBoxColumn,
-            this.hasRepairDataGridViewCheckBoxColumn,
-            this.hasRearmDataGridViewCheckBoxColumn,
-            this.hasOutfittingDataGridViewCheckBoxColumn,
-            this.hasShipyardDataGridViewCheckBoxColumn,
-            this.updatedAtDataGridViewTextBoxColumn,
             this.noteDataGridViewTextBoxColumn,
             this.distanceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.stationBindingSource1;
@@ -132,6 +116,7 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Size = new System.Drawing.Size(1258, 138);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // stationBindingSource1
             // 
@@ -192,6 +177,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "System Data";
+            // 
+            // lNotes
+            // 
+            this.lNotes.AutoSize = true;
+            this.lNotes.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lNotes.Location = new System.Drawing.Point(279, 68);
+            this.lNotes.Name = "lNotes";
+            this.lNotes.Size = new System.Drawing.Size(35, 13);
+            this.lNotes.TabIndex = 25;
+            this.lNotes.Text = "Name";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(279, 55);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Notes";
             // 
             // lDistCurrent
             // 
@@ -457,19 +461,20 @@
             this.maxlandingpadsizeDataGridViewTextBoxColumn.Name = "maxlandingpadsizeDataGridViewTextBoxColumn";
             this.maxlandingpadsizeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // distancetoStarDataGridViewTextBoxColumn
-            // 
-            this.distancetoStarDataGridViewTextBoxColumn.DataPropertyName = "Distance_to_Star";
-            this.distancetoStarDataGridViewTextBoxColumn.HeaderText = "Distance_to_Star";
-            this.distancetoStarDataGridViewTextBoxColumn.Name = "distancetoStarDataGridViewTextBoxColumn";
-            this.distancetoStarDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // factionDataGridViewTextBoxColumn
             // 
             this.factionDataGridViewTextBoxColumn.DataPropertyName = "Faction";
             this.factionDataGridViewTextBoxColumn.HeaderText = "Faction";
             this.factionDataGridViewTextBoxColumn.Name = "factionDataGridViewTextBoxColumn";
             this.factionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Faction
+            // 
+            this.Faction.DataPropertyName = "Faction";
+            this.Faction.HeaderText = "Faction";
+            this.Faction.Name = "Faction";
+            this.Faction.ReadOnly = true;
             // 
             // governmentDataGridViewTextBoxColumn
             // 
@@ -499,62 +504,6 @@
             this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
             this.typeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // hasBlackmarketDataGridViewCheckBoxColumn
-            // 
-            this.hasBlackmarketDataGridViewCheckBoxColumn.DataPropertyName = "HasBlackmarket";
-            this.hasBlackmarketDataGridViewCheckBoxColumn.HeaderText = "HasBlackmarket";
-            this.hasBlackmarketDataGridViewCheckBoxColumn.Name = "hasBlackmarketDataGridViewCheckBoxColumn";
-            this.hasBlackmarketDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasCommoditiesDataGridViewCheckBoxColumn
-            // 
-            this.hasCommoditiesDataGridViewCheckBoxColumn.DataPropertyName = "HasCommodities";
-            this.hasCommoditiesDataGridViewCheckBoxColumn.HeaderText = "HasCommodities";
-            this.hasCommoditiesDataGridViewCheckBoxColumn.Name = "hasCommoditiesDataGridViewCheckBoxColumn";
-            this.hasCommoditiesDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasRefuelDataGridViewCheckBoxColumn
-            // 
-            this.hasRefuelDataGridViewCheckBoxColumn.DataPropertyName = "HasRefuel";
-            this.hasRefuelDataGridViewCheckBoxColumn.HeaderText = "HasRefuel";
-            this.hasRefuelDataGridViewCheckBoxColumn.Name = "hasRefuelDataGridViewCheckBoxColumn";
-            this.hasRefuelDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasRepairDataGridViewCheckBoxColumn
-            // 
-            this.hasRepairDataGridViewCheckBoxColumn.DataPropertyName = "HasRepair";
-            this.hasRepairDataGridViewCheckBoxColumn.HeaderText = "HasRepair";
-            this.hasRepairDataGridViewCheckBoxColumn.Name = "hasRepairDataGridViewCheckBoxColumn";
-            this.hasRepairDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasRearmDataGridViewCheckBoxColumn
-            // 
-            this.hasRearmDataGridViewCheckBoxColumn.DataPropertyName = "HasRearm";
-            this.hasRearmDataGridViewCheckBoxColumn.HeaderText = "HasRearm";
-            this.hasRearmDataGridViewCheckBoxColumn.Name = "hasRearmDataGridViewCheckBoxColumn";
-            this.hasRearmDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasOutfittingDataGridViewCheckBoxColumn
-            // 
-            this.hasOutfittingDataGridViewCheckBoxColumn.DataPropertyName = "HasOutfitting";
-            this.hasOutfittingDataGridViewCheckBoxColumn.HeaderText = "HasOutfitting";
-            this.hasOutfittingDataGridViewCheckBoxColumn.Name = "hasOutfittingDataGridViewCheckBoxColumn";
-            this.hasOutfittingDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // hasShipyardDataGridViewCheckBoxColumn
-            // 
-            this.hasShipyardDataGridViewCheckBoxColumn.DataPropertyName = "HasShipyard";
-            this.hasShipyardDataGridViewCheckBoxColumn.HeaderText = "HasShipyard";
-            this.hasShipyardDataGridViewCheckBoxColumn.Name = "hasShipyardDataGridViewCheckBoxColumn";
-            this.hasShipyardDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // updatedAtDataGridViewTextBoxColumn
-            // 
-            this.updatedAtDataGridViewTextBoxColumn.DataPropertyName = "UpdatedAt";
-            this.updatedAtDataGridViewTextBoxColumn.HeaderText = "UpdatedAt";
-            this.updatedAtDataGridViewTextBoxColumn.Name = "updatedAtDataGridViewTextBoxColumn";
-            this.updatedAtDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
@@ -568,25 +517,6 @@
             this.distanceDataGridViewTextBoxColumn.HeaderText = "Distance";
             this.distanceDataGridViewTextBoxColumn.Name = "distanceDataGridViewTextBoxColumn";
             this.distanceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(279, 55);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Notes";
-            // 
-            // lNotes
-            // 
-            this.lNotes.AutoSize = true;
-            this.lNotes.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lNotes.Location = new System.Drawing.Point(279, 68);
-            this.lNotes.Name = "lNotes";
-            this.lNotes.Size = new System.Drawing.Size(35, 13);
-            this.lNotes.TabIndex = 25;
-            this.lNotes.Text = "Name";
             // 
             // Main
             // 
@@ -618,14 +548,7 @@
         private System.Windows.Forms.BindingSource stationBindingSource1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.BindingSource stationBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxlandingpadsizeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn distancetostarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn factionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn governmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn allegianceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasblackmarketDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hascommoditiesDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn hasrefuelDataGridViewCheckBoxColumn;
@@ -659,20 +582,19 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lDistCurrent;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn systemIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn distancetoStarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasBlackmarketDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasCommoditiesDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasRefuelDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasRepairDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasRearmDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasOutfittingDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn hasShipyardDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedAtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn distanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lNotes;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxlandingpadsizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn factionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Faction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn governmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allegianceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distanceDataGridViewTextBoxColumn;
     }
 }

@@ -16,7 +16,8 @@ namespace EliteTrading.Data
         public double x { get; set; }
         public double y { get; set; }
         public double z { get; set; }
-        public string faction { get; set; }
+        public Faction faction { get; set; }
+        public int controlling_minor_faction_id { get; set; }
         public Int64 population { get; set; }
         public string government { get; set; }
         public string allegiance { get; set; }
@@ -25,7 +26,7 @@ namespace EliteTrading.Data
         public string primary_economy { get; set; }
         public bool needs_permit { get; set; }
         public int updated_at { get; set; }
-        public string power_control_faction { get; set; }
+        public string power { get; set; }
         public string note { get; set; }
 
         public int StationAmount
@@ -76,7 +77,7 @@ namespace EliteTrading.Data
 
         public void ParseNote()
         {
-            switch(power_control_faction)
+            switch(power)
             {
                 case "Zachary Hudson":
                     note += "10% Weapons discount";

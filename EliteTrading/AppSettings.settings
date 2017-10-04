@@ -35,5 +35,8 @@
     <Setting Name="StationsDbUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://eddb.io/archive/v5/stations.json</Value>
     </Setting>
+    <Setting Name="FactionsDbUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://eddb.io/archive/v5/factions.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

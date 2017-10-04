@@ -67,11 +67,42 @@ namespace EliteTrading
         {
             Systems = new List<Data.System>();
 
+            var FactionsFile = new System.IO.FileInfo("Data/factions.json");
+            DownloadDB(FactionsFile, AppSettings.Default.FactionsDbUrl);
+
             var SystemsFile = new System.IO.FileInfo("Data/systems.json");
             DownloadDB(SystemsFile, AppSettings.Default.SystemsDbUrl);
             
             var StationsFile = new System.IO.FileInfo("Data/stations_lite.json");
             DownloadDB(StationsFile, AppSettings.Default.StationsDbUrl);
+
+
+            var FactionsArray = new Data.Faction[0];
+            using (var reader = new StreamReader(FactionsFile.FullName))
+            {
+                string json = reader.ReadToEnd();
+                json = json.Replace("null", "0");
+                ProgressMessage = "Reading Factions";
+
+                var FactionsList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Data.Faction>>(json);
+                Progress = 10;
+
+                ProgressMessage = "Processing Factions";
+
+                int LargestID = 0;
+                foreach (var faction in FactionsList)
+                {
+                    if (faction.id > LargestID)
+                        LargestID = faction.id;
+                }
+
+                FactionsArray = new Data.Faction[LargestID + 1];
+
+                foreach (var faction in FactionsList)
+                {
+                    FactionsArray[faction.id] = faction;
+                }
+            }
 
             using (var reader = new StreamReader(SystemsFile.FullName))
             {
@@ -94,8 +125,8 @@ namespace EliteTrading
 
                 foreach (var system in SystemList)
                 {
-                    if (system.power_control_faction == "0")
-                        system.power_control_faction = "";
+                    if (system.power == "0")
+                        system.power = "";
                     if (system.primary_economy == "0")
                         system.primary_economy = "";
                     if (system.security == "0")
@@ -104,15 +135,21 @@ namespace EliteTrading
                         system.state = "";
                     if (system.government == "0")
                         system.government = "";
-                    if (system.faction == "0")
-                        system.faction = "";
                     if (system.allegiance == "0")
                         system.allegiance = "";
 
+                    system.faction = FactionsArray[system.controlling_minor_faction_id];
                     SysArray[system.id] = system;
                 }
                 SystemList.Clear();
                 SystemList = null;
+
+                foreach(var faction in FactionsArray)
+                {
+                    if (faction != null)
+                        faction.home_system = SysArray[faction.home_system_id];
+                }
+                
 
                 Progress = 40;
 
@@ -129,6 +166,8 @@ namespace EliteTrading
 
                 foreach (var station in Stations)
                 {
+                    station.Faction = FactionsArray[station.FactionID];
+
                     SysArray[station.System_ID].Stations.Add(station);
                 }
                 Stations.Clear();

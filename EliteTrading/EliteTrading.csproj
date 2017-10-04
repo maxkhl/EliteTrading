@@ -69,6 +69,7 @@
     <Compile Include="Data\Route.cs" />
     <Compile Include="Data\Rules.cs" />
     <Compile Include="Data\Station.cs" />
+    <Compile Include="Data\Faction.cs" />
     <Compile Include="Data\System.cs" />
     <Compile Include="Data\Trade.cs" />
     <Compile Include="Data\Vector3.cs" />
@@ -116,6 +117,12 @@
     </Compile>
     <Compile Include="Systems\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\Faction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Systems\Faction.Designer.cs">
+      <DependentUpon>Faction.cs</DependentUpon>
     </Compile>
     <Compile Include="Systems\Main.cs">
       <SubType>Form</SubType>
@@ -199,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Systems\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Systems\Faction.resx">
+      <DependentUpon>Faction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Systems\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

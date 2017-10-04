@@ -25,7 +25,7 @@ namespace EliteTrading.Systems
 
             this.lName.Text = System.name;
             this.lGovernment.Text = System.government;
-            this.lFaction.Text = System.power_control_faction == "" ? "Uncontrolled" : System.power_control_faction;
+            this.lFaction.Text = System.power == "" ? "Uncontrolled" : System.power;
             this.lEconomy.Text = System.primary_economy;
             this.lPermit.Text = System.needs_permit ? "Yes" : "No special permit needed";
             this.lPopulation.Text = string.Format("{0:n0}", System.population);
@@ -49,5 +49,15 @@ namespace EliteTrading.Systems
         {
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgvSender = (DataGridView)sender;
+            if (dgvSender.Columns[e.ColumnIndex] is DataGridViewLinkColumn &&
+                e.RowIndex >= 0)
+            {
+               var faction = ((Data.Station)dgvSender.Rows[e.RowIndex].DataBoundItem).Faction;
+                new Faction(faction).Show();
+            }
+        }
     }
 }

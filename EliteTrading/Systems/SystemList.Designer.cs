@@ -31,10 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.StationAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.systemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.systemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.systemBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.StationAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.populationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.governmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allegianceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +48,6 @@
             this.powercontrolfactionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coordinatesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.distanceToSolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.systemBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.systemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.systemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.systemBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.systemBindingSource1)).BeginInit();
@@ -93,24 +93,21 @@
             this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // StationAmount
+            // systemBindingSource3
             // 
-            this.StationAmount.DataPropertyName = "StationAmount";
-            this.StationAmount.HeaderText = "Stations";
-            this.StationAmount.Name = "StationAmount";
-            this.StationAmount.ReadOnly = true;
-            this.StationAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StationAmount.Width = 50;
+            this.systemBindingSource3.DataSource = typeof(EliteTrading.Data.System);
             // 
-            // note
+            // systemBindingSource1
             // 
-            this.note.DataPropertyName = "note";
-            this.note.HeaderText = "Note";
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
-            this.note.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.note.ToolTipText = "Additional Information";
-            this.note.Width = 150;
+            this.systemBindingSource1.DataSource = typeof(EliteTrading.Data.System);
+            // 
+            // systemBindingSource
+            // 
+            this.systemBindingSource.DataSource = typeof(EliteTrading.Data.System);
+            // 
+            // systemBindingSource2
+            // 
+            this.systemBindingSource2.DataSource = typeof(EliteTrading.Data.System);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -122,12 +119,31 @@
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn1.ToolTipText = "Name of the System";
             // 
+            // StationAmount
+            // 
+            this.StationAmount.DataPropertyName = "StationAmount";
+            this.StationAmount.HeaderText = "Stations";
+            this.StationAmount.Name = "StationAmount";
+            this.StationAmount.ReadOnly = true;
+            this.StationAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StationAmount.Width = 50;
+            // 
             // populationDataGridViewTextBoxColumn
             // 
             this.populationDataGridViewTextBoxColumn.DataPropertyName = "population";
             this.populationDataGridViewTextBoxColumn.HeaderText = "Population";
             this.populationDataGridViewTextBoxColumn.Name = "populationDataGridViewTextBoxColumn";
             this.populationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // note
+            // 
+            this.note.DataPropertyName = "note";
+            this.note.HeaderText = "Note";
+            this.note.Name = "note";
+            this.note.ReadOnly = true;
+            this.note.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.note.ToolTipText = "Additional Information";
+            this.note.Width = 150;
             // 
             // governmentDataGridViewTextBoxColumn
             // 
@@ -175,7 +191,7 @@
             // 
             // powercontrolfactionDataGridViewTextBoxColumn
             // 
-            this.powercontrolfactionDataGridViewTextBoxColumn.DataPropertyName = "power_control_faction";
+            this.powercontrolfactionDataGridViewTextBoxColumn.DataPropertyName = "power";
             this.powercontrolfactionDataGridViewTextBoxColumn.HeaderText = "Power Control Faction";
             this.powercontrolfactionDataGridViewTextBoxColumn.Name = "powercontrolfactionDataGridViewTextBoxColumn";
             this.powercontrolfactionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -193,22 +209,6 @@
             this.distanceToSolDataGridViewTextBoxColumn.HeaderText = "Distance to Sol";
             this.distanceToSolDataGridViewTextBoxColumn.Name = "distanceToSolDataGridViewTextBoxColumn";
             this.distanceToSolDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // systemBindingSource3
-            // 
-            this.systemBindingSource3.DataSource = typeof(EliteTrading.Data.System);
-            // 
-            // systemBindingSource1
-            // 
-            this.systemBindingSource1.DataSource = typeof(EliteTrading.Data.System);
-            // 
-            // systemBindingSource
-            // 
-            this.systemBindingSource.DataSource = typeof(EliteTrading.Data.System);
-            // 
-            // systemBindingSource2
-            // 
-            this.systemBindingSource2.DataSource = typeof(EliteTrading.Data.System);
             // 
             // SystemList
             // 

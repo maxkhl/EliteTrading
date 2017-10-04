@@ -31,6 +31,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.l_Data = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.l_LoadingStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whereToBuyShipsGearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cB_Location = new System.Windows.Forms.ComboBox();
             this.systemList1 = new EliteTrading.Systems.SystemList();
-            this.l_LoadingStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -86,7 +86,7 @@
             this.l_LoadingStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 464);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1193, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1061, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -102,6 +102,11 @@
             this.progressBar.Size = new System.Drawing.Size(100, 16);
             this.progressBar.Visible = false;
             // 
+            // l_LoadingStatus
+            // 
+            this.l_LoadingStatus.Name = "l_LoadingStatus";
+            this.l_LoadingStatus.Size = new System.Drawing.Size(0, 17);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
@@ -113,7 +118,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1193, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1061, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,48 +129,48 @@
             this.powerplayImperialSlaveRoutesToolStripMenuItem});
             this.toolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Desktop;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.toolsToolStripMenuItem.Text = "Reports";
             // 
             // whereToBuyShipsGearToolStripMenuItem
             // 
             this.whereToBuyShipsGearToolStripMenuItem.Name = "whereToBuyShipsGearToolStripMenuItem";
-            this.whereToBuyShipsGearToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.whereToBuyShipsGearToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
             this.whereToBuyShipsGearToolStripMenuItem.Text = "Where to buy Ships/Gear";
             this.whereToBuyShipsGearToolStripMenuItem.Click += new System.EventHandler(this.whereToBuyShipsGearToolStripMenuItem_Click);
             // 
             // powerplayImperialSlaveRoutesToolStripMenuItem
             // 
             this.powerplayImperialSlaveRoutesToolStripMenuItem.Name = "powerplayImperialSlaveRoutesToolStripMenuItem";
-            this.powerplayImperialSlaveRoutesToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.powerplayImperialSlaveRoutesToolStripMenuItem.Size = new System.Drawing.Size(291, 22);
             this.powerplayImperialSlaveRoutesToolStripMenuItem.Text = "Powerplay Imperial Slave (illegal-) Routes";
             this.powerplayImperialSlaveRoutesToolStripMenuItem.Click += new System.EventHandler(this.powerplayImperialSlaveRoutesToolStripMenuItem_Click);
             // 
             // commoditiesToolStripMenuItem
             // 
             this.commoditiesToolStripMenuItem.Name = "commoditiesToolStripMenuItem";
-            this.commoditiesToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.commoditiesToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.commoditiesToolStripMenuItem.Text = "Commodities";
             this.commoditiesToolStripMenuItem.Click += new System.EventHandler(this.commoditiesToolStripMenuItem_Click);
             // 
             // routeToolStripMenuItem
             // 
             this.routeToolStripMenuItem.Name = "routeToolStripMenuItem";
-            this.routeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.routeToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.routeToolStripMenuItem.Text = "Route";
             this.routeToolStripMenuItem.Click += new System.EventHandler(this.routeToolStripMenuItem_Click);
             // 
             // mapToolStripMenuItem
             // 
             this.mapToolStripMenuItem.Name = "mapToolStripMenuItem";
-            this.mapToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.mapToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.mapToolStripMenuItem.Text = "Map";
             this.mapToolStripMenuItem.Click += new System.EventHandler(this.mapToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -185,7 +190,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.systemList1);
-            this.splitContainer1.Size = new System.Drawing.Size(1193, 440);
+            this.splitContainer1.Size = new System.Drawing.Size(1061, 440);
             this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -216,7 +221,7 @@
             this.gB_MyData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gB_MyData.Location = new System.Drawing.Point(0, 0);
             this.gB_MyData.Name = "gB_MyData";
-            this.gB_MyData.Size = new System.Drawing.Size(1193, 97);
+            this.gB_MyData.Size = new System.Drawing.Size(1061, 97);
             this.gB_MyData.TabIndex = 0;
             this.gB_MyData.TabStop = false;
             this.gB_MyData.Text = "My Data";
@@ -488,20 +493,15 @@
             this.systemList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.systemList1.Location = new System.Drawing.Point(0, 0);
             this.systemList1.Name = "systemList1";
-            this.systemList1.Size = new System.Drawing.Size(1193, 339);
+            this.systemList1.Size = new System.Drawing.Size(1061, 339);
             this.systemList1.TabIndex = 0;
-            // 
-            // l_LoadingStatus
-            // 
-            this.l_LoadingStatus.Name = "l_LoadingStatus";
-            this.l_LoadingStatus.Size = new System.Drawing.Size(0, 17);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1193, 486);
+            this.ClientSize = new System.Drawing.Size(1061, 486);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

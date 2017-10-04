@@ -162,8 +162,8 @@ namespace EliteTrading.Data
         {
             var Trades = new List<Trade>();
 
-            if (System.power_control_faction != "Zemina Torval" &&
-                System.power_control_faction != "Archon Delaine")
+            if (System.power != "Zemina Torval" &&
+                System.power != "Archon Delaine")
                 return Trades;
 
             bool HasValidStation = false;
@@ -180,7 +180,7 @@ namespace EliteTrading.Data
             
             // Find match in System Pool
             Trades.AddRange(CheckSystemForFaction(
-                System.power_control_faction == "Zemina Torval" ? "Archon Delaine" : "Zemina Torval",
+                System.power == "Zemina Torval" ? "Archon Delaine" : "Zemina Torval",
                 SystemPool, 
                 1, 
                 System, 
@@ -199,7 +199,7 @@ namespace EliteTrading.Data
 
             foreach (var tSystem in SystemPool)
             {
-                if (tSystem.power_control_faction != Faction)
+                if (tSystem.power != Faction)
                     continue;
 
                 if (tSystem == System)
@@ -221,7 +221,7 @@ namespace EliteTrading.Data
                 if (FirstValidStation == null) continue;
 
                 var newTrade = new Trade();
-                if (SourceSystem.power_control_faction == "Zemina Torval")
+                if (SourceSystem.power == "Zemina Torval")
                 {
                     newTrade.AddStep(SourceSystem, Commodity.GetByName("Imperial Slaves"), null);
                     newTrade.AddStep(tSystem, null, Commodity.GetByName("Imperial Slaves"));
