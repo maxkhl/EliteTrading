@@ -26,5 +26,14 @@
     <Setting Name="LPad" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CommodityDbUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://eddb.io/archive/v5/commodities.json</Value>
+    </Setting>
+    <Setting Name="SystemsDbUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://eddb.io/archive/v5/systems_populated.json</Value>
+    </Setting>
+    <Setting Name="StationsDbUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://eddb.io/archive/v5/stations.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 
 namespace EliteTrading
 {
@@ -39,7 +40,27 @@ namespace EliteTrading
 
         private static void LoadCommodities()
         {
-            Commodities = Data.Commodity.Load(new FileInfo("Data/commodities.json"));
+            var ComFile = new FileInfo("Data/commodities.json");
+            DownloadDB(ComFile, AppSettings.Default.CommodityDbUrl);
+
+            Commodities = Data.Commodity.Load(ComFile);
+        }
+
+        private static void DownloadDB(FileInfo File, string URL)
+        {
+            ProgressMessage = String.Format("Loading {0}\nDatabase", File.Name);
+            if (File.Exists && (File.CreationTime - DateTime.Now).Days > 1)
+                File.Delete();
+
+            if (!File.Directory.Exists) File.Directory.Create();
+            if (!File.Exists)
+            {
+                using (var client = new WebClient())
+                {
+                    ProgressMessage = String.Format("Loading {0}\nDatabase from Remote", File.Name);
+                    client.DownloadFile(URL, File.FullName);
+                }
+            }
         }
 
         private static void LoadSystems()
@@ -47,7 +68,10 @@ namespace EliteTrading
             Systems = new List<Data.System>();
 
             var SystemsFile = new System.IO.FileInfo("Data/systems.json");
+            DownloadDB(SystemsFile, AppSettings.Default.SystemsDbUrl);
+            
             var StationsFile = new System.IO.FileInfo("Data/stations_lite.json");
+            DownloadDB(StationsFile, AppSettings.Default.StationsDbUrl);
 
             using (var reader = new StreamReader(SystemsFile.FullName))
             {

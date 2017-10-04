@@ -31,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -217,15 +218,6 @@
     <EmbeddedResource Include="TradeResult.resx">
       <DependentUpon>TradeResult.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\commodities.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\stations_lite.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\systems.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Properties\DataSources\EliteTrading.Data.Commodity.datasource" />
     <None Include="Properties\DataSources\EliteTrading.Data.Route+RouteStep.datasource" />
     <None Include="Properties\DataSources\EliteTrading.Data.Station.datasource" />

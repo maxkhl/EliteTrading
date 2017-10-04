@@ -37,11 +37,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Spy Agency Laser", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(12, 548);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 26);
+            this.label1.Size = new System.Drawing.Size(207, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Elite Trading Tool";
             // 
@@ -49,11 +49,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Spy Agency", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(549, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 28);
+            this.label2.Size = new System.Drawing.Size(134, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Loading...";
             // 
@@ -68,7 +68,6 @@
             this.lStatus.Size = new System.Drawing.Size(38, 19);
             this.lStatus.TabIndex = 2;
             this.lStatus.Text = "Info";
-            this.lStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SplashScreen
             // 

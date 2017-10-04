@@ -236,6 +236,12 @@ namespace EliteTrading
 
         private void powerplayImperialSlaveRoutesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(UserData.System == null)
+            {
+                MessageBox.Show("Please set a system first", "No home-system set", MessageBoxButtons.OK);
+                return;
+            }
+
             var tradeWindow = new TradeResult(Data.Trade.SearchFunctions.ImperialSlavePowerplay);
             tradeWindow.TextBox.AppendText("Imperial Slave Routes" + Environment.NewLine, Color.Blue, 15);
             tradeWindow.TextBox.AppendText(Environment.NewLine + "It is possible to buy Imperial Slaves in systems controlled by Zemina Torwal with a 10% discount and sell them on the black market in Acheron Delaine-controlled systems for a price boost of 15%. ");
